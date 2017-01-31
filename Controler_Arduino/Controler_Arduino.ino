@@ -45,7 +45,17 @@ int nextInt() {
   int input = NULL;
   while (input == NULL) {
     input = Serial.parseInt();
+    if(Serial.available()==false){//if losses connition to computer will drop out of sky
+      analogWrite(11, 0); 
+      analogWrite(10, 0);
+      analogWrite(9, 0);
+      while(altitude != 0){
+        --altitude;
+        analogWrite(6, altitude);
+      }
+    }
+      return input;
   }
-  return input;
 }
+
 
