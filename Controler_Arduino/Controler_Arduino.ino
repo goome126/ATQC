@@ -1,6 +1,6 @@
-int pitch=0,roll=0,yah=0,altitude=0,command;
+int pitch=0,roll=0,yah=0,altitude=0;
+short command;
 void setup() {
-  //short command;  //pitch 1, roll 2, yah 3, altitude 4
   Serial.begin(250000);
   while (!Serial) { }
   Serial.println("Arduino Online");
@@ -8,7 +8,7 @@ void setup() {
 
 void loop() {
     
-    command = nextInt();
+    command = nextInt();   //pitch 1, roll 2, yah 3, altitude 4
     Serial.println(command);
 
   if(command == 1) {
