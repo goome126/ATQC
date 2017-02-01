@@ -10,31 +10,31 @@ void loop() {
     
     command = nextInt();   //pitch 1, roll 2, yah 3, altitude 4
     Serial.println(command);
-
-  if(command == 1) {
+switch (command) {
+  case 1:
     pitch = nextInt();
     Serial.println("pitch=");
     Serial.println(pitch);
-  }
+  break;
 
-  if(command == 2) {
+  case 2:
     roll = nextInt();
     Serial.println("roll=");
     Serial.println(roll);
-  }
+  break;
 
-  if(command == 3) {
+  case 3:
     yah = nextInt();
     Serial.println("yah=");
     Serial.println(yah);
-  }
+  break;
 
-  if(command == 4) {
+  case 4:
     altitude = nextInt();
     Serial.println("altitude=");
     Serial.println(altitude);
-  }
-
+  break;
+}
   analogWrite(11, pitch); 
   analogWrite(10, roll);
   analogWrite(9, yah);
