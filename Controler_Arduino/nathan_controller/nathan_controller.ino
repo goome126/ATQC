@@ -1,70 +1,38 @@
-int pitch,altitude,yaw,roll;
+int pitch,altitude,yaw,roll,command,value;
 
 void setup() {
-  Serial.begin(9600);
-  Serial.println("Controller Running");
+  Serial.begin(9600); //Initalize serial
+  Serial.println("Controller Running"); //Make sure serial is initialized
+  Serial.setTimeout(5); //Reduce delay on readstring
 }
 
 void loop() {
-char pos1,pos2,pos3;
+String cline = Serial.readString(); //Read a string out of serial and assign that to cline
+char commandChar = cline.charAt(0); //Take the first character out of the string to determine what you're controlling
+command = (int)commandChar - 48; //Convert that character to an int
+value = cline.substring(1).toInt(); //Store the actual value you're trying to pass into a value
 
-switch (Serial.read()) {
-case '1':
- delay(5);
- pos1 = Serial.read();
- Serial.println(pos1);
- pitch = ((int)pos1 - 48) * 100;
- pos2 = Serial.read();
- Serial.println(pos2);
- pitch = pitch + ((int)pos2 - 48) * 10;
- pos3 = Serial.read();
- Serial.println(pos3);
- pitch = pitch + ((int)pos3 - 48);
+switch (command) { //Have a switch statement that determines what you're controlling
+case 1:
+ pitch = value;
  Serial.print("pitch = ");
  Serial.println(pitch);
  break;
     
-case '2':
- delay(5);
- pos1 = Serial.read();
- Serial.println(pos1);
- roll = ((int)pos1 - 48) * 100;
- pos2 = Serial.read();
- Serial.println(pos2);
- roll = roll + ((int)pos2 - 48) * 10;
- pos3 = Serial.read();
- Serial.println(pos3);
- roll = roll + ((int)pos3 - 48);
+case 2:
+ roll = value; 
  Serial.print("roll = ");
  Serial.println(roll);
  break;
 
-case '3':
- delay(5);
- pos1 = Serial.read();
- Serial.println(pos1);
- yaw = ((int)pos1 - 48) * 100;
- pos2 = Serial.read();
- Serial.println(pos2);
- yaw = yaw + ((int)pos2 - 48) * 10;
- pos3 = Serial.read();
- Serial.println(pos3);
- yaw = yaw + ((int)pos3 - 48);
+case 3:
+ yaw = value; 
  Serial.print("yaw = ");
  Serial.println(yaw);
  break;
    
-case '4':
- delay(5);
- pos1 = Serial.read();
- Serial.println(pos1);
- altitude = ((int)pos1 - 48) * 100;
- pos2 = Serial.read();
- Serial.println(pos2);
- altitude = altitude + ((int)pos2 - 48) * 10;
- pos3 = Serial.read();
- Serial.println(pos3);
- altitude = altitude + ((int)pos3 - 48);
+case 4:
+ altitude = value; 
  Serial.print("altitude = ");
  Serial.println(altitude);
  break;
