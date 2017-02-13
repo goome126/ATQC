@@ -1,4 +1,4 @@
-int pitch,altitude,yaw,roll;
+unsigned short pitch,altitude,yaw,roll;
 
 void setup() {
   Serial.begin(9600); //Initalize serial
