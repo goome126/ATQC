@@ -3,6 +3,7 @@ unsigned short pitch,altitude,yaw,roll;
 void setup() {
   Serial.begin(9600); //Initalize serial
   Serial.println("Controller Running"); //Make sure serial is initialized
+  while (Serial.available() < 1) {} //wait until there is at least one byte comming from Serial
 }
 
 // this method reads a command and value as one byte, using the first 2 bits to determine the
@@ -11,7 +12,6 @@ void setup() {
 // be used as values to set.
 
 void loop() {
-  while (Serial.available() < 1) {} //wait until there is at least one byte comming from Serial
   int input = Serial.read(); //Read one byte of Serial
   int command = input/64; //get front two bits
   int value = 2*(input%64); //get last 6 bits with modular division
@@ -44,6 +44,13 @@ void loop() {
    default:
    
    break;
+  }
+
+  if(Serial.available() == false){
+    pitch=0;
+    roll=0;
+    yaw=0;
+    altitude=0;
   }
     Serial.flush();
     analogWrite(11,pitch);
