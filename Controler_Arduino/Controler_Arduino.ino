@@ -13,8 +13,8 @@ void setup() {
 
 void loop() {
   int input = Serial.read(); //Read one byte of Serial
-  int command = input/64; //get front two bits
-  int value = 2*(input%64); //get last 6 bits with modular division
+  short command = input/64; //get front two bits
+  unsigned short value = 2*(input%64); //get last 6 bits with modular division
 
   switch (command) { //Have a switch statement that determines what you're controlling
   case 1:
