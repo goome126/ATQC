@@ -17,29 +17,29 @@ void loop() {
   int value = 2*(input%64); //get last 6 bits with modular division
 
   switch (command) { //Have a switch statement that determines what you're controlling
-  case 1:
-  pitch = value;
-  Serial.println("pitch = " + pitch);
-  break;
-  
-  case 2:
-   roll = value; 
-   Serial.println("roll = " + roll);
-   break;
-  
-  case 3:
-   yaw = value; 
-   Serial.println("yaw = " + yaw);
-   break;
+    case 1:
+      pitch = value;
+      Serial.println("pitch = " + pitch);
+    break;
+    
+    case 2:
+     roll = value; 
+     Serial.println("roll = " + roll);
+     break;
+    
+    case 3:
+     yaw = value; 
+     Serial.println("yaw = " + yaw);
+     break;
+       
+    case 0:
+     altitude = value; 
+     Serial.println("altitude = " + altitude);
+     break;
+    
+     default:
      
-  case 0:
-   altitude = value; 
-   Serial.println("altitude = " + altitude);
-   break;
-  
-   default:
-   
-   break;
+     break;
   }
 
   if(Serial.available() == false){//If we loss connection to the computer we drop
