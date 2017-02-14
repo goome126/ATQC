@@ -42,11 +42,11 @@ void loop() {
    break;
   }
 
-  if(Serial.available() == false){
-    pitch=0;
-    roll=0;
-    yaw=0;
-    altitude=0;
+  if(Serial.available() == false){//If we loss connection to the computer we drop
+    pitch = 0;
+    roll = 0;
+    yaw = 0;
+    altitude = 0;
   }
     Serial.flush();
     analogWrite(11,pitch);
