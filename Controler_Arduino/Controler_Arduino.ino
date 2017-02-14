@@ -38,7 +38,7 @@ void loop() {
    break;
   
    default:
-   
+   Serial.println("Bad input"); // place holder for return if we loss somthing in Serial
    break;
   }
 
