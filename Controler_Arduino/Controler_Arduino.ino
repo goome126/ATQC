@@ -19,26 +19,22 @@ void loop() {
   switch (command) { //Have a switch statement that determines what you're controlling
   case 1:
   pitch = value;
-  Serial.print("pitch = ");
-  Serial.println(pitch);
+  Serial.println("pitch = " + pitch);
   break;
   
   case 2:
    roll = value; 
-   Serial.print("roll = ");
-   Serial.println(roll);
+   Serial.println("roll = " + roll);
    break;
   
   case 3:
    yaw = value; 
-   Serial.print("yaw = ");
-   Serial.println(yaw);
+   Serial.println("yaw = " + yaw);
    break;
      
   case 0:
    altitude = value; 
-   Serial.print("altitude = ");
-   Serial.println(altitude);
+   Serial.println("altitude = " + altitude);
    break;
   
    default:
