@@ -1,0 +1,6 @@
+C:\Users\PhilNDJ\Documents\GitHub\ATQC\visualStudioStuff\quadCopterSolution\quadCopter\obj\Debug\quadCopter.csprojResolveAssemblyReference.cache
+C:\Users\PhilNDJ\Documents\GitHub\ATQC\visualStudioStuff\quadCopterSolution\quadCopter\bin\Debug\quadCopter.exe.config
+C:\Users\PhilNDJ\Documents\GitHub\ATQC\visualStudioStuff\quadCopterSolution\quadCopter\bin\Debug\quadCopter.exe
+C:\Users\PhilNDJ\Documents\GitHub\ATQC\visualStudioStuff\quadCopterSolution\quadCopter\bin\Debug\quadCopter.pdb
+C:\Users\PhilNDJ\Documents\GitHub\ATQC\visualStudioStuff\quadCopterSolution\quadCopter\obj\Debug\quadCopter.exe
+C:\Users\PhilNDJ\Documents\GitHub\ATQC\visualStudioStuff\quadCopterSolution\quadCopter\obj\Debug\quadCopter.pdb
